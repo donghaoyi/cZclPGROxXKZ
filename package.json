@@ -1,0 +1,17 @@
+{
+  "name": "vite-demo-2",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "sass": "^1.26.10",
+    "vue": "^3.0.0-beta.10",
+    "vue-router": "4.0.0-beta.2"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.0-beta.10",
+    "vite": "^0.13.1"
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vite App</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import { createApp } from 'vue'
+    import App from './App.vue'
+    import { createRouter, createWebHistory } from 'vue-router'
+    import Home from './views/Home.vue';
+    import Doc from './views/Doc.vue';
+    import SwitchDemo from './components/SwitchDemo.vue';
+    import IconDemo from './components/IconDemo.vue';
+    import ButtonDemo from './components/ButtonDemo.vue';
+
+    const routerHistory = createWebHistory()
+    const router = createRouter({
+      history: routerHistory,
+      routes: [
+        {
+          path: '/',
+          component: Home
+        },
+        {
+          path: '/doc',
+          component: Doc,
+          children: [
+            {path: 'switch', component: SwitchDemo},
+            {path: 'icon', component: IconDemo},
+            {path: 'button', component: ButtonDemo},
+          ]
+        }
+      ]
+    })
+
+    const app = createApp(App)
+    app.use(router)
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
